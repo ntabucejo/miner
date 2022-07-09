@@ -1,23 +1,12 @@
 import Link from "next/link";
 import type { FunctionComponent } from "react";
 import useRoute from "../../../functions/hooks/use-route";
-import Button from "../../elements/button";
 import Path from "../../elements/path";
 
 const Navbar: FunctionComponent = () => {
   const { isRouteActive: isISRActive } = useRoute(
     "/incremental-static-regeneration"
   );
-
-  const { isAtRoute: isAtHome } = useRoute("/");
-
-  const revalidateHandler = async () => {
-    await fetch("/api/revalidate");
-  };
-
-  const regenerateUsersHandler = async () => {
-    await fetch("/api/regenerate-users");
-  };
 
   return (
     <nav className="space-y-1">
@@ -34,16 +23,7 @@ const Navbar: FunctionComponent = () => {
           </Path>
         </ul>
       </div>
-      <div className="flex items-center gap-4">
-        <div className="flex gap-4">
-          <Button onClick={regenerateUsersHandler} isEnabled={!isAtHome}>
-            Regenerate Users
-          </Button>
-          <Button onClick={revalidateHandler} isEnabled={isISRActive}>
-            Revalidate
-          </Button>
-        </div>
-      </div>
+      <div className="flex items-center gap-4"></div>
     </nav>
   );
 };
