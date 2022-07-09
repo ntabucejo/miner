@@ -9,7 +9,7 @@ const Skeleton: FunctionComponent = () => {
         <p className="text-xs opacity-50">miner@mail.com</p>
       </div>
 
-      <span className="grow text-right text-xs font-bold">
+      <span className="grow truncate text-right text-xs font-bold">
         <span className="opacity-50">Level:</span> ###
       </span>
     </div>
