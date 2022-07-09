@@ -25,10 +25,10 @@ const Profile: FunctionComponent<Props> = ({ user, mute = false }) => {
         </div>
         <div>
           <p className="truncate font-bold">{`${user.firstName} ${user.lastName}`}</p>
-          <p className="text-xs opacity-50">{user.email}</p>
+          <p className="truncate text-xs lowercase opacity-50">{user.email}</p>
         </div>
 
-        <span className="grow text-right text-xs font-bold">
+        <span className="grow truncate text-right text-xs font-bold">
           <span className="opacity-50">Level:</span>{" "}
           {`00${user.level}`.slice(-3)}
         </span>
