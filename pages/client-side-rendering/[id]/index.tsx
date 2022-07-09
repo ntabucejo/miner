@@ -1,26 +1,28 @@
 import type { NextPage } from "next";
-import Profile from "../../components/elements/profile";
-import Layout from "../../components/layout";
-import Leaderboard from "../../components/sections/leaderboard";
-import type { User } from "../../functions/utilities/generate-users";
+import Profile from "../../../components/elements/profile";
+import Layout from "../../../components/layout";
+import type { User } from "../../../functions/utilities/generate-users";
 import { useEffect, useState } from "react";
-import Banner from "../../components/sections/banner";
-import Skeleton from "../../components/elements/profile/skeleton";
+import Banner from "../../../components/sections/banner";
+import { useRouter } from "next/router";
+import Leaderboard from "../../../components/sections/leaderboard";
+import Skeleton from "../../../components/elements/profile/skeleton";
 
 const ClientSideRendering: NextPage = () => {
-  const [users, setUsers] = useState<User[] | null>(null);
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await fetch("/api/users");
+    const fetchUser = async () => {
+      const response = await fetch(`/api/users/${router.query.id}`);
       const data = await response.json();
-      setUsers(data);
+      setUser(data);
     };
 
-    setTimeout(fetchUsers, 1000);
-  }, []);
+    setTimeout(fetchUser, 1000);
+  }, [router.query]);
 
-  if (!users) {
+  if (!user) {
     return (
       <Layout>
         <Banner
@@ -29,9 +31,7 @@ const ClientSideRendering: NextPage = () => {
           link="https://nextjs.org/docs/basic-features/data-fetching/client-side"
         />
         <Leaderboard>
-          {Array.from({ length: 50 }, (_, index) => (
-            <Skeleton key={index} />
-          ))}
+          <Skeleton />
         </Leaderboard>
       </Layout>
     );
@@ -45,9 +45,7 @@ const ClientSideRendering: NextPage = () => {
         link="https://nextjs.org/docs/basic-features/data-fetching/client-side"
       />
       <Leaderboard>
-        {users.map((user) => (
-          <Profile key={user.id} user={user} />
-        ))}
+        <Profile user={user} mute />
       </Leaderboard>
     </Layout>
   );

@@ -2,17 +2,16 @@ import type { FunctionComponent, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  onClick: () => void;
+  isEnabled: boolean;
 }
 
-const Button: FunctionComponent<Props> = ({ children }) => {
-  const handler = async () => {
-    await fetch("/api/revalidate");
-  };
-
+const Button: FunctionComponent<Props> = ({ children, onClick, isEnabled }) => {
   return (
     <button
-      onClick={handler}
-      className="rounded bg-slate-900 px-2 py-1 text-slate-50 active:opacity-80">
+      onClick={onClick}
+      disabled={!isEnabled}
+      className="truncate rounded border px-2 py-1 text-sm enabled:hover:bg-slate-800 enabled:hover:text-slate-50 enabled:active:scale-95 disabled:border-0 disabled:opacity-50">
       {children}
     </button>
   );
