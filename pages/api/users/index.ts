@@ -8,7 +8,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
   try {
     const users = await prisma.user.findMany();
-    response.send(users);
+    response.status(200).json(users);
   } catch (error) {
     return response.send({ error });
   }
