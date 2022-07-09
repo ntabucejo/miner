@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Board: FunctionComponent<Props> = ({ children }) => {
+const Leaderboard: FunctionComponent<Props> = ({ children }) => {
   return (
     <section>
       <h1 className="mb-2 text-lg font-semibold">Leaderboard</h1>
@@ -13,4 +13,4 @@ const Board: FunctionComponent<Props> = ({ children }) => {
   );
 };
 
-export default Board;
+export default Leaderboard;

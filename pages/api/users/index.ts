@@ -1,9 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import prisma from "../../../functions/utilities/prisma";
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
+  if (request.method !== "GET") {
+    response.send({ error: "Method not allowed" });
+  }
+
   try {
-    await response.revalidate("/incremental-static-regeneration");
-    return response.send({ revalidated: true });
+    const users = await prisma.user.findMany();
+    response.send(users);
   } catch (error) {
     return response.send({ error });
   }
