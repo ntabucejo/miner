@@ -4,8 +4,8 @@ import Layout from "../../components/layout";
 import Leaderboard from "../../components/sections/leaderboard";
 import type { User } from "../../functions/utilities/generate-users";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Banner from "../../components/sections/banner";
+import Skeleton from "../../components/elements/profile/skeleton";
 
 const ClientSideRendering: NextPage = () => {
   const [users, setUsers] = useState<User[] | null>(null);
@@ -29,17 +29,9 @@ const ClientSideRendering: NextPage = () => {
           link="https://nextjs.org/docs/basic-features/data-fetching/client-side"
         />
         <Leaderboard>
-          <div className="grid h-[50vh] place-items-center">
-            <div className="relative h-10 w-10 animate-spin">
-              <Image
-                src="/loading.png"
-                objectFit="contain"
-                layout="fill"
-                alt=""
-                priority
-              />
-            </div>
-          </div>
+          {Array.from({ length: 50 }, (_, index) => (
+            <Skeleton key={index} />
+          ))}
         </Leaderboard>
       </Layout>
     );
