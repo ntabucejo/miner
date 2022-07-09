@@ -5,7 +5,7 @@ import Button from "../../elements/button";
 import Path from "../../elements/path";
 
 const Navbar: FunctionComponent = () => {
-  const { isRouteActive: isISRActive } = useRoute(
+  const { isActive: isISRActive } = useRoute(
     "/incremental-static-regeneration"
   );
 

@@ -8,12 +8,12 @@ interface Props {
 }
 
 const Path: FunctionComponent<Props> = ({ children, url }) => {
-  const { isRouteActive } = useRoute(url);
+  const { isActive } = useRoute(url);
 
   return (
     <li
       className={`${
-        isRouteActive ? "underline underline-offset-2" : "text-slate-500"
+        isActive ? "underline underline-offset-2" : "text-slate-500"
       } truncate hover:text-slate-800`}>
       <Link href={url}>{children}</Link>
     </li>
