@@ -1,9 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
 import Profile from "../../components/elements/profile";
 import Layout from "../../components/layout";
-import Board from "../../components/sections/leaderboard";
+import Leaderboard from "../../components/sections/leaderboard";
 import generateUsers from "../../functions/utilities/generate-users";
 import type { User } from "../../functions/utilities/generate-users";
+import Banner from "../../components/sections/banner";
 
 interface Props {
   users: User[];
@@ -12,11 +13,16 @@ interface Props {
 const IncrementalStaticRegeneration: NextPage<Props> = ({ users }) => {
   return (
     <Layout>
-      <Board>
+      <Banner
+        title="Incremental Static Regeneration"
+        description="Incremental static regeneration enables you to use static-generation on a per-page basis, without needing to rebuild the entire site."
+        link="https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration"
+      />
+      <Leaderboard>
         {users.map((user) => (
           <Profile key={user.id} user={user} />
         ))}
-      </Board>
+      </Leaderboard>
     </Layout>
   );
 };
