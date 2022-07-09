@@ -10,14 +10,6 @@ interface Props {
 const Layout: FunctionComponent<Props> = ({ children }) => {
   return (
     <Fragment>
-      <Head>
-        <title>Miner</title>
-        <meta
-          name="description"
-          content="Different strategies to fetch data using reactjs and nextjs with miner"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="min-h-screen pb-4 [&>*>div]:mx-auto [&>*>div]:max-w-4xl [&>*>div]:p-2">
         <header className="sticky top-0 z-10 bg-slate-50">
           <div>
