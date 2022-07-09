@@ -16,7 +16,8 @@ const ClientSideRendering: NextPage = () => {
       const users = generateUsers();
       setUsers(users);
     };
-    getUsers();
+
+    setTimeout(getUsers, 1000);
   }, []);
 
   if (!users) {
