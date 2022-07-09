@@ -9,7 +9,7 @@ const Navbar: FunctionComponent = () => {
   );
 
   return (
-    <nav className="space-y-1">
+    <nav>
       <div className="flex items-center gap-4">
         <Link href="/">
           <a className="cursor-pointer text-2xl font-bold">MINER</a>
