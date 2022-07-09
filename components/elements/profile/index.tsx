@@ -23,7 +23,7 @@ const Profile: FunctionComponent<Props> = ({ user }) => {
       </div>
 
       <span className="grow text-right text-xs font-bold">
-        {`00${user.level}`.slice(-3)}
+        <span className="opacity-50">Level:</span> {`00${user.level}`.slice(-3)}
       </span>
     </div>
   );
