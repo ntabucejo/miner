@@ -14,9 +14,9 @@ const IncrementalStaticRegeneration: NextPage<Props> = ({ user }) => {
   return (
     <Layout>
       <Banner
-        title="Server Side Rendering"
-        description="Server-side rendering means using a server to generate HTML from JavaScript modules in response to a URL request."
-        link="https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props"
+        title="Incremental Static Regeneration"
+        description="Incremental static regeneration enables you to use static-generation on a per-page basis, without needing to rebuild the entire site."
+        link="https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration"
       />
       <Leaderboard>
         <Profile user={user} mute />

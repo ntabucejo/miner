@@ -14,9 +14,9 @@ const ServerSideGeneration: NextPage<Props> = ({ user }) => {
   return (
     <Layout>
       <Banner
-        title="Server Side Rendering"
-        description="Server-side rendering means using a server to generate HTML from JavaScript modules in response to a URL request."
-        link="https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props"
+        title="Static Site Generation"
+        description="Static-site generation creates a number of static paths based on the data needed for the page. At build time, these many paths are rendered out into static pages, and served incredibly quickly to the client."
+        link="https://nextjs.org/docs/basic-features/data-fetching/get-static-props"
       />
       <Leaderboard>
         <Profile user={user} mute />
