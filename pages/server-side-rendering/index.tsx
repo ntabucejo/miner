@@ -1,9 +1,10 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Profile from "../../components/elements/profile";
 import Layout from "../../components/layout";
-import Board from "../../components/sections/leaderboard";
+import Leaderboard from "../../components/sections/leaderboard";
 import generateUsers from "../../functions/utilities/generate-users";
 import type { User } from "../../functions/utilities/generate-users";
+import Banner from "../../components/sections/banner";
 
 interface Props {
   users: User[];
@@ -12,11 +13,16 @@ interface Props {
 const ServerSideRendering: NextPage<Props> = ({ users }) => {
   return (
     <Layout>
-      <Board>
+      <Banner
+        title="Server Side Rendering"
+        description="Server-side rendering means using a server to generate HTML from JavaScript modules in response to a URL request."
+        link="https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props"
+      />
+      <Leaderboard>
         {users.map((user) => (
           <Profile key={user.id} user={user} />
         ))}
-      </Board>
+      </Leaderboard>
     </Layout>
   );
 };
