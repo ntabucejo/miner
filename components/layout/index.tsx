@@ -25,7 +25,7 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
           </div>
         </header>
         <main>
-          <div>{children}</div>
+          <div className="space-y-4">{children}</div>
         </main>
       </div>
     </Fragment>
