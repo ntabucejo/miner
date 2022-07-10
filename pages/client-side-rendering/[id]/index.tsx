@@ -27,7 +27,7 @@ const ClientSideRendering: NextPage = () => {
       <Layout>
         <Banner
           title="Client Side Rendering"
-          description="Client-side rendering means that a website's JavaScript is rendered in your browser, rather than on the website's server."
+          description="Client-side rendering means if done at the page level, the data is fetched at runtime, and the content of the page is updated as the data changes. When used at the component level, the data is fetched at the time of the component mount, and the content of the component is updated as the data changes."
           link="https://nextjs.org/docs/basic-features/data-fetching/client-side"
         />
         <Leaderboard>
@@ -41,7 +41,7 @@ const ClientSideRendering: NextPage = () => {
     <Layout>
       <Banner
         title="Client Side Rendering"
-        description="Client-side rendering means that a website's JavaScript is rendered in your browser, rather than on the website's server."
+        description="Client-side rendering means if done at the page level, the data is fetched at runtime, and the content of the page is updated as the data changes. When used at the component level, the data is fetched at the time of the component mount, and the content of the component is updated as the data changes."
         link="https://nextjs.org/docs/basic-features/data-fetching/client-side"
       />
       <Leaderboard>

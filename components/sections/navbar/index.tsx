@@ -17,7 +17,7 @@ const Navbar: FunctionComponent = () => {
         <ul className="flex gap-2 font-semibold">
           <Path url="/client-side-rendering">CSR</Path>
           <Path url="/server-side-rendering">SSR</Path>
-          <Path url="/server-side-generation">SSG</Path>
+          <Path url="/static-site-generation">SSG</Path>
           <Path url="/incremental-static-regeneration">
             {!isISRActive ? "ISR" : "ISR (60s)"}
           </Path>

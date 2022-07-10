@@ -15,7 +15,7 @@ const ServerSideRendering: NextPage<Props> = ({ users }) => {
     <Layout>
       <Banner
         title="Server Side Rendering"
-        description="Server-side rendering means using a server to generate HTML from JavaScript modules in response to a URL request."
+        description="Server-side rendering is also known as dynamic rendering. In SSR the page is generated each time the server gets a request. Pages on which the data have to change for a particular type of request, those pages use SSR as data is not the same for every request and may vary with it."
         link="https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props"
       />
       <Leaderboard>
