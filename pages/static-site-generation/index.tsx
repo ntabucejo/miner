@@ -10,7 +10,7 @@ interface Props {
   users: User[];
 }
 
-const ServerSideGeneration: NextPage<Props> = ({ users }) => {
+const StaticSiteGeneration: NextPage<Props> = ({ users }) => {
   return (
     <Layout>
       <Banner
@@ -27,7 +27,7 @@ const ServerSideGeneration: NextPage<Props> = ({ users }) => {
   );
 };
 
-export default ServerSideGeneration;
+export default StaticSiteGeneration;
 
 export const getStaticProps: GetStaticProps = async () => {
   const users = await prisma.user.findMany();

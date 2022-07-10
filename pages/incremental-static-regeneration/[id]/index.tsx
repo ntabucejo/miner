@@ -15,7 +15,7 @@ const IncrementalStaticRegeneration: NextPage<Props> = ({ user }) => {
     <Layout>
       <Banner
         title="Incremental Static Regeneration"
-        description="Incremental static regeneration enables you to use static-generation on a per-page basis, without needing to rebuild the entire site."
+        description="Incremental static regeneration (ISR) enables you to use static-generation on a per-page basis, without needing to rebuild the entire site. With ISR, you can retain the benefits of static while scaling to millions of pages."
         link="https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration"
       />
       <Leaderboard>
