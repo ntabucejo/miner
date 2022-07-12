@@ -1,17 +1,35 @@
-import type { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
 const Skeleton: FunctionComponent = () => {
+  const [randomWidth, setRandomWidth] = useState({
+    fullName: 0,
+    email: 0,
+  });
+
+  useEffect(() => {
+    setRandomWidth({
+      fullName: Math.floor(Math.random() * (10 - 5)) + 5,
+      email: Math.floor(Math.random() * (12 - 5)) + 5,
+    });
+  }, []);
+
   return (
     <div className="flex animate-pulse items-center gap-4 p-2 ">
       <div className="relative h-10 w-10 overflow-hidden rounded-full bg-slate-200"></div>
-      <div>
-        <p className="truncate font-bold">.......</p>
-        <p className="text-xs opacity-50">miner@mail.com</p>
+      <div className="grow space-y-2">
+        <div
+          style={{
+            width: `${randomWidth.fullName}rem`,
+          }}
+          className="h-3 rounded-full bg-slate-300 font-bold"></div>
+        <div
+          style={{
+            width: `${randomWidth.email}rem`,
+          }}
+          className="h-3 rounded-full bg-slate-300 opacity-50"></div>
       </div>
 
-      <span className="grow truncate text-right text-xs font-bold">
-        <span className="opacity-50">Level:</span> ###
-      </span>
+      <div className="h-3 w-14 rounded-full bg-slate-300 opacity-50"></div>
     </div>
   );
 };
